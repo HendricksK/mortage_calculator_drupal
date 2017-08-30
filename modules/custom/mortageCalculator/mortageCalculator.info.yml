@@ -1,0 +1,7 @@
+name: Mortage Calculator Module
+description: The goal of this module is to add a block to the site that will display a mortgage calculator
+package: Custom
+type: module
+core: 8.x
+
+#https://www.drupal.org/node/2000204
