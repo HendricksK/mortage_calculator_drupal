@@ -1,6 +1,9 @@
 name: Mortage Calculator Module
 description: The goal of this module is to add a block to the site that will display a mortgage calculator
 package: Custom
+dependencies:
+  - node
+  - block
 type: module
 core: 8.x
 

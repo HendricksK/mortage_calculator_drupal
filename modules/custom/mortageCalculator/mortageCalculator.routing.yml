@@ -2,6 +2,6 @@ mortageCalculator:
   path: '/mortageCalculator'
   defaults: 
     _title: 'Mortage Calculator'
-    _controller: '\Drupal\mortageCalculator\MortageController::content'
+    _controller: '\Drupal\mortageCalculator\MortageCalculatorController::content'
   requirements:
     _permission: 'access content'
