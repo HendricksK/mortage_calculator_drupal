@@ -45,13 +45,27 @@ class workForm extends FormBase {
       '#required' => TRUE,
     );
 
+    $form['monthly_repayment'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Monthly repayment:'),
+      '#value' => t('')
+    );
+
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = array(
       '#type' => 'submit',
-      '#value' => $this->t('Register'),
+      '#value' => $this->t('Calculate'),
       '#button_type' => 'primary',
     );
     return $form;
+  }
+
+  public function displayReturnData($return) {    
+    $form['monthly_repayment'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Repayment:'),
+      '#markup' => t($session->get('monthly_repayment')),
+    );
   }
 
   /**
@@ -63,5 +77,7 @@ class workForm extends FormBase {
       (($form_state->getValue('interest_rate') / 12 ) / 100) / 
       (1 - pow( 1 + (($form_state->getValue('interest_rate') / 12) / 100))))));
 
+    // $form_state->setValue($this->t('@monthly_repayment', array('@monthly_repayment' => $form_state->getValue('price_of_property') - $form_state->getValue('deposit')) * (($form_state->getValue('interest_rate') / 12 ) / 100) / 
+    //   (1 - pow( 1 + (($form_state->getValue('interest_rate') / 12) / 100)))));
   }
 }
